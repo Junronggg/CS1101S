@@ -75,4 +75,4 @@ function moony11(n, counter, shape)
                     counter+1, 
                     beside_frac(1/(counter+1), stack_frac(1/(counter+1), circle, square), stack_frac(1/(counter+1), blank, shape)));
 }
-show(moony11(3, 1, circle));
+show(moony11(5, 1, circle));
