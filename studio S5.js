@@ -1,4 +1,4 @@
-draw_data(list(list(1, 2, list(3)), list(4, 5), pair(6, 7)));
+/*draw_data(list(list(1, 2, list(3)), list(4, 5), pair(6, 7)));
 draw_data(pair(1, list(2, 3, pair(4, null))));
 draw_data(pair(1, pair(2, list(3, list(4, 5)))));
 display_list(list(list(1, 2, list(3)), list(4, 5), pair(6, 7)));
@@ -23,3 +23,32 @@ function every_second(list)
                   every_second(tail(tail(list))));
 }
 every_second(lst);
+*/
+
+const listsum=list(1, 2, 3, 4, 5, 6);
+
+
+function sums(list1)
+{
+    function sum_even(list1)
+    {
+        return length(list1)<=1
+               ? head(list1)
+               : head(list1) + sum_even(tail(tail(list1)));
+    }
+    
+    function sum_odd(list1)
+    {
+        return length(list1)<=1
+               ? 0
+               : length(list1) <=2
+                    ? tail(list1)
+                    : head(tail(list1)) + sum_odd(tail(tail(list1)));
+    }
+    
+    //return pair(sum_even(list), pair(sum_odd(list), null));
+    return list(sum_even(list1), sum_odd(list1));
+}
+
+sums(listsum);
+
