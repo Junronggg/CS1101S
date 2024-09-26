@@ -21,10 +21,10 @@ function smallest(xs) {
 }
 function selection_sort(xs) {
     if (is_null(xs)) {
-    return xs;
+        return xs;
     } else {
-    const x = smallest(xs);
-    return pair(x, selection_sort(remove(x, xs)));
+        const x = smallest(xs);
+        return pair(x, selection_sort(remove(x, xs)));
     }
 }
 
@@ -59,12 +59,18 @@ function middle(n) {
 }
 // put the first n elements of xs into a list
 function take(xs, n) {
-    // ???
+    // YOUR SOLUTION HERE
+    return n<=0
+           ? null 
+           : pair(head(xs), take(tail(xs), n-1));
 }
-// drop the first n elements from the list
-// and return the rest
+
+// drop the first n elements from list, return rest
 function drop(xs, n) {
-    // ???
+    // YOUR SOLUTION HERE
+    return n<=0
+           ? xs 
+           : remove(head(xs), drop(tail(xs), n-1));
 }
 
 
