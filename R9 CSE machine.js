@@ -1,21 +1,14 @@
-// function iter(n, acc) {
-//     return n === 1
-//           ? acc
-//           : iter(n - 1, acc * n); 
-// }
-// function fact_iter(n) {
-//     return iter(n, 1);
-// }
-
-// fact_iter(100);
-
 //qn1
-// function foo(x) {
-//     while (x<20) {
-//         return foo(x+1);
-//     }
+//list(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+//qn2
+// const n = 40;
+// function qn2(n) {
+//     return n === 20
+//           ? 20
+//           : n * qn2(n + 1); 
 // }
-// foo(1);
+// qn2(0);
 
 //qn3
 // const x=1;
@@ -33,15 +26,13 @@
 // }
 
 //qn4
-// function foo(x) {
-//     return x => y => z => foo(x)(y)(z);
-// }
-// foo(1)(2)(3);
+//(x => x => x => x)(1)(2)(3);
 
-function f(n) {
-    return n;
+//qn5;
+function f(x) {
+	return x === 0
+		? true
+		: f(x - 1) ? true : true;
 }
-function foo(x) {
-    return x;
-}
-f(foo);
+
+f(5);
